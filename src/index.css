@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 30, 41, 59;
+
+  /* Custom Theme Colors */
+  --primary: #0f172a;
+  /* Slate 900 */
+  --secondary: #1e293b;
+  /* Slate 800 */
+  --accent: #06b6d4;
+  /* Cyan 500 */
+  --accent-light: #22d3ee;
+  /* Cyan 400 */
+  --neutral: #94a3b8;
+  /* Slate 400 */
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #0a0f1e;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Premium Animated Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  animation: gradientShift 15s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #22d3ee, #a855f7);
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientFlow {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Button Glow Effect */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-glow:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+/* Entrance Animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3D Image Effect */
+.image-3d-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.image-3d {
+  transform: rotateY(-15deg) rotateX(5deg);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow:
+    -20px 20px 60px rgba(6, 182, 212, 0.3),
+    -40px 40px 100px rgba(139, 92, 246, 0.2);
+}
+
+.image-3d:hover {
+  transform: rotateY(-10deg) rotateX(2deg) scale(1.05);
+  box-shadow:
+    -25px 25px 80px rgba(6, 182, 212, 0.4),
+    -50px 50px 120px rgba(139, 92, 246, 0.3);
+}
+
+/* Optimized float animation - lighter than before */
+@keyframes gentleFloat {
+
+  0%,
+  100% {
+    transform: rotateY(-15deg) rotateX(5deg) translateY(0px);
+  }
+
+  50% {
+    transform: rotateY(-15deg) rotateX(5deg) translateY(-15px);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
