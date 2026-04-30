@@ -3,6 +3,9 @@ import projectImage1 from "../assets/pimg1.png";
 import projectImage2 from "../assets/pimg2.png";
 import projectImage3 from "../assets/pimg3.png";
 import projectImage4 from "../assets/pimg4.png";
+import projectImage5 from "../assets/pimg5.png";
+import projectImage6 from "../assets/pimg6.png";
+
 
 export const HERO_CONTENT = `Computer Science student passionate about building modern web applications. Specializing in the MERN stack with hands-on experience in React, Node.js, and MongoDB. Eager to contribute to innovative projects and grow as a developer.`;
 
@@ -26,6 +29,24 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Real-Time Chat Application",
+    image: projectImage6,
+    description:
+    "A full-stack real-time chat application built using the MERN stack and Socket.io. This application allows users to authenticate, send text and image messages, see online users, and experience instant messaging with sound notifications.",
+    technologies: ["React", "Zustand", "Socket.io Client", "Axios", "Tailwind CSS", "Node.js", "Express.js", "MongoDB + Mongoose", "Socket.io", "JWT Authentication", "Cloudinary (Image Uploads)"],
+    link: "https://chat-nova-three.vercel.app/",
+    github: "https://github.com/Shubham-12bhatt/ChatNova"
+  },
+  {
+    title: "Full Stack E-Commerce Website",
+    image: projectImage5,
+    description:
+      "A full-stack E-commerce web application where users can browse products, authenticate using Google or JWT, add items to cart, and make secure payments. The platform provides a seamless shopping experience with modern UI and secure backend APIs. The platform also includes a dedicated Admin Portal for managing products, enabling admins to add, update, and delete items efficiently.",
+    technologies: ["React", "Vite", "JavaScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT Authentication", "Google OAuth (Passport.js)"],
+    link: "https://e-commerce-mtpc.vercel.app/",
+    github: "https://github.com/Shubham-12bhatt/E-commerce"
+  },
   {
     title: "NagarBandhu - Civic Issue Reporting System",
     image: projectImage1,
